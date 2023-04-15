@@ -1,0 +1,826 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+}
+
+body {
+  font-family: 'Fredoka', sans-serif;
+  font-family: 'Roboto', sans-serif;
+}
+
+h1,
+p {
+  color: #150101;
+}
+
+.bg {
+  width: 1600px;
+  height: 862px;
+  background-color: rgba(210, 49, 102, 0.1);
+  z-index: -10;
+}
+.third-bg {
+  width: 100%;
+  height: 544.5px;
+  background-color: rgba(210, 49, 102, 0.1);
+  z-index: -10;
+  margin-top: 100px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.left-side h1 {
+  font-family: 'Hind Madurai', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 44.2px;
+  line-height: 49px;
+}
+.left-side p {
+  opacity: 0.6;
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+}
+.button1 {
+  width: 165px;
+  height: 49.13px;
+  background: #d64374;
+  border-radius: 5px;
+  color: white;
+  border: none;
+}
+.first-block {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 100px;
+  align-items: center;
+}
+
+.right-side {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.circle {
+  position: relative;
+  width: 365px;
+  height: 353px;
+  background: #d23166;
+  opacity: 0.1;
+  border-radius: 600px;
+  top: 150px;
+  left: 0px;
+}
+
+.ice-cream {
+  position: absolute;
+  width: 500px;
+}
+
+.milk {
+  position: absolute;
+  z-index: 10;
+  left: -190px;
+  top: 0px;
+  width: 700px;
+}
+
+.ellipse {
+  position: absolute;
+  width: 173px;
+  height: 15px;
+  top: 529px;
+  left: 90px;
+  background: #8d1f42;
+  opacity: 1;
+  filter: blur(16px);
+}
+
+/* скрываем чекбокс */
+#menu__toggle {
+  opacity: 0;
+}
+/* стилизуем кнопку */
+.menu__btn {
+  display: flex; /* используем flex для центрирования содержимого */
+  align-items: center;  /* центрируем содержимое кнопки */
+  position: fixed;
+  top: 20px;
+  width: 26px;
+  height: 26px;
+  cursor: pointer;
+  z-index: 1;
+  display: none;
+}
+
+@media(max-width: 768px) {
+  .menu_btn {
+    display: block;
+  }
+}
+
+/* добавляем "гамбургер" */
+.menu__btn > span,
+.menu__btn > span::before,
+.menu__btn > span::after {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: #616161;
+}
+.menu__btn > span::before {
+  content: '';
+  top: -8px;
+}
+.menu__btn > span::after {
+  content: '';
+  top: 8px;
+}
+
+.menu__box {
+  display: block;
+  position: fixed;
+  visibility: hidden;
+  top: 0;
+  left: -100%;
+  width: 300px;
+  height: 100%;
+  margin: 0;
+  padding: 80px 0;
+  list-style: none;
+  text-align: center;
+  background-color: #ECEFF1;
+  box-shadow: 1px 0px 6px rgba(0, 0, 0, .2);
+}
+/* элементы меню */
+.menu__item {
+  display: block;
+  padding: 12px 24px;
+  color: #333;
+  font-family: 'Roboto', sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  text-decoration: none;
+}
+.menu__item:hover {
+  background-color: #CFD8DC;
+}
+
+#menu__toggle:checked ~ .menu__btn > span {
+  transform: rotate(45deg);
+}
+#menu__toggle:checked ~ .menu__btn > span::before {
+  top: 0;
+  transform: rotate(0);
+}
+#menu__toggle:checked ~ .menu__btn > span::after {
+  top: 0;
+  transform: rotate(90deg);
+}
+#menu__toggle:checked ~ .menu__box {
+  visibility: visible;
+  left: 0;
+}
+
+.menu__btn > span,
+.menu__btn > span::before,
+.menu__btn > span::after {
+  transition-duration: .25s;
+}
+.menu__box {
+  transition-duration: .25s;
+}
+.menu__item {
+  transition-duration: .25s;
+}
+
+.third-block {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.third-right-side {
+  position: relative;
+  width: 560px;
+}
+
+.third-right-side img {
+  height: 544px;
+}
+
+.third-left-side {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.third-left-side p {
+  width: 442px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #150101;
+  opacity: 0.6;
+}
+.third-left-side h2 {
+  width: 349px;
+  height: 98.27px;
+  font-weight: 600;
+  font-size: 44.2px;
+  line-height: 49px;
+  color: #150101;
+}
+
+.navbar {
+  display: flex;
+  list-style-type: none;
+  gap: 40px;
+}
+
+@media (max-width:768px) {
+  .navbar {
+    display: none;
+  }
+}
+
+.navbar li a {
+  text-decoration: none;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+  color: #150101;
+  opacity: 0.6;
+}
+
+.buyNow {
+  width: 165px;
+  height: 49px;
+  background: #d23166;
+  border-radius: 5px;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 22px;
+  color: #fafafa;
+  border-style: none;
+}
+
+.left-side h2 {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 16px;
+  letter-spacing: 0.1em;
+  color: #0f0101;
+}
+
+.left-side h1 {
+  font-family: 'Fredoka';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 57.33px;
+  line-height: 120.5%;
+  color: #0f0101;
+  width: 620px;
+  opacity: 0.9;
+  margin-bottom: 35px;
+}
+
+.left-side p {
+  width: 523px;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 27px;
+  color: #0f0101;
+  opacity: 0.6;
+  margin-bottom: 50px;
+}
+
+span {
+  color: #d23166;
+}
+
+.second-block {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 100px;
+}
+
+.klass {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.klass img {
+  width: 54px;
+}
+
+.klass p {
+  text-align: center;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 19px;
+  text-align: center;
+  color: #000000;
+  opacity: 0.6;
+  width: 198px;
+}
+
+.klass h2 {
+  font-family: 'Hind Madurai';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 28px;
+  color: #000000;
+}
+
+.container {
+  max-width: 100%;
+  margin: 0 15rem;
+}
+
+.name {
+  margin-top: 2rem;
+}
+
+.name > h1 {
+  text-align: center;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.nav-links > ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+  gap: 30px;
+}
+
+.nav-links > ul > li:first-child {
+  color: black;
+  font-weight: 700;
+  border-bottom: 2px solid #d64374;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.first {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.rightSide-Content {
+  width: 478px;
+  margin-left: 2rem;
+}
+
+.rightSide-Content > h1 {
+  font-family: 'Hind Madurai';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 36px;
+  color: #000000;
+}
+
+.rightSide-Content > p {
+  width: 420px;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #000000;
+  opacity: 0.7;
+  margin: 20px 0;
+}
+
+.rightSide-Content > span {
+  display: flex;
+  align-items: center;
+  font-family: 'Hind Madurai';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 26px;
+  line-height: 36px;
+  color: #000000;
+  gap: 15px;
+}
+
+.rightSide-Content > span > p {
+  font-family: 'Hind Madurai';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 28px;
+  text-decoration-line: line-through;
+  color: #000000;
+  opacity: 0.7;
+}
+
+.rightSide-Content > button {
+  background: #d64374;
+  border-radius: 5px;
+  width: 165px;
+  height: 48px;
+  margin: 10px 0;
+  cursor: pointer;
+  transition: all 0.3s;
+  color: #ffffff;
+}
+
+.rightSide-img {
+  transition: all 0.3s;
+}
+
+.rightSide-img:hover {
+  font-size: 100px;
+}
+
+.rightSide-Content > button:hover {
+  font-size: 20px;
+}
+
+.second {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.leftSide-Content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: right;
+}
+
+.leftSide-content > h1 {
+  font-family: 'Hind Madurai';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 36px;
+  text-align: right;
+  color: #000000;
+}
+
+.leftSide-content > p {
+  width: 405px;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  text-align: right;
+  color: #000000;
+  opacity: 0.7;
+  margin: 20px 0;
+}
+
+.leftSide-invalid > span {
+  display: flex;
+  align-items: center;
+  text-align: right;
+  font-family: 'Hind Madurai';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 26px;
+  line-height: 36px;
+  text-align: right;
+  color: #000000;
+  gap: 15px;
+}
+
+.leftSide-invalid > span > p {
+  font-family: 'Hind Madurai';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 28px;
+  text-align: right;
+  text-decoration-line: line-through;
+  color: #000000;
+  opacity: 0.7;
+}
+
+.leftSide-invalid {
+  transform: translateX(250px);
+}
+
+.leftSide-invalid > button {
+  background: #d64374;
+  border-radius: 5px;
+  width: 165px;
+  height: 48px;
+  margin: 10px 0;
+  cursor: pointer;
+  color: #ffffff;
+}
+
+.third {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.fourth {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.user-info-name {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 28px;
+  color: #000000;
+}
+
+.user-info-name > p {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14px;
+  color: #000000;
+  opacity: 0.7;
+  margin-top: 5px;
+}
+
+.rightSide-mainContent {
+  margin-top: 25px;
+  width: 300px;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #000000;
+  opacity: 0.7;
+}
+
+.leftSide-logos-slider {
+  margin-top: 2rem;
+  gap: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.main-logoImages {
+  gap: 20px;
+  display: flex;
+  align-items: center;
+}
+.order {
+  display: flex;
+  align-items: center;
+  gap: 10rem;
+  justify-content: center;
+}
+
+.order-content>h2 {
+  width: 621px;
+  font-family: 'Hind Madurai', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 44.2px;
+  line-height: 61px;
+  color: #000000;
+}
+
+.order-content>p {
+  width: 607px;
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 21px;
+  letter-spacing: 0.01em;
+  color: #0F0101;
+  opacity: 0.7;
+  margin: 25px 0;
+}
+
+.order-cards-title  {
+  display: flex;
+}
+.order-title   {  
+padding: 15px;
+box-sizing: border-box;
+display: flex;
+}
+
+.google-appstore    {
+  display: flex;
+}
+
+.question   {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 3rem;
+  gap: 2rem;
+  justify-content: center;
+  
+}
+
+.question>h2    {
+  width: 505px;
+  font-family: 'Hind Madurai', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 44.2px;
+  text-align: center;
+  line-height: 61px;
+  color: #000000;
+}
+.input  {
+  display: flex;
+  width: 650px;
+  overflow: hidden;
+  
+}
+
+
+input {
+  width: 100%;
+  outline: none;
+  height: 74px;
+  font-size: 25px;
+  color: #d23166;
+  border-radius: 5px;
+  border-color: grey;
+}
+
+input:focus {
+  border: 3px solid #d23166;
+  box-shadow: 7px 7px 8px 1px rgba(210, 49, 102, 0.2);
+
+}
+
+::placeholder   {
+  font-size: 30px;
+  text-align: center;
+}
+.input>button   {
+  border-color: transparent;
+  width: 164px;
+  height: 74px;
+  margin-bottom: 10rem;
+}
+.nav-links > ul > li:hover::after {
+  
+  transform: scaleX(1);
+ 
+}
+.navbar::after{
+  content: "";
+    width: 65px;
+    height: 3px;
+    background-color: #03e9f4;
+    transform: scaleX(0);
+    transition: 0.2s;
+    display: block;
+
+}
+.input>button:hover{
+  background-color:  rgb(173, 67, 103);
+  
+
+  
+} 
+ .nav-links > ul > li::after {
+  content: "";
+  width: 100%;
+  height: 3px;
+  background-color: #d23166;
+  transform: scaleX(0);
+  transition: 0.2s;
+  display: block;
+}
+
+.navbar li a:hover{
+  color: #d23166;
+}
+
+.footermenu {
+  height: 300px;
+  background: #0A0808;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.firstblock > p {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 17px;
+  letter-spacing: 0.01em;
+  color: #FFFFFF;
+  width: 200px;
+  height: 75px;
+}
+
+.firstblock > h4 {
+  color: #ffffff;
+}
+
+.secondblock {
+  height: 93px;
+}
+
+.secondblock > ul > li {
+  height: 26px;
+}
+
+.secondblock > ul {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  color: #FFFFFF;
+  opacity: 0.8;
+}
+
+.thirdblock > ul {
+  color: #ffffff;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  opacity: 0.8;
+}
+
+.thirdblock > u > li {
+  height: 23px;
+}
+
+.quarterblock > h3 {
+  color: #ffffff;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+}
+
+.subscribeblock {
+  height: 40px;
+  width: 243px;
+}
+
+.subscribeblock > input {
+  height: 30px;
+  background-color: black;
+  width: 172px;
+  border: 2px solid #D64374;
+  border-radius: 5px
+}
+
+.subscribeblock > button {
+  height: 30px;
+  border: 2px solid #D64374;
+  border-radius: 5px;
+  background-color: #d64374;
+  color: #ffffff;
+}
+
